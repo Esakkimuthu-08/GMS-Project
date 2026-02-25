@@ -1,13 +1,11 @@
-import { useRole } from "../context/roleContext";
 import { useNavigate } from "react-router-dom";
 import { Users, UserCheck, Shield } from "lucide-react";
 
 export default function Index() {
-  const { setRole } = useRole();
   const navigate = useNavigate();
 
   const handleRoleSelect = (role) => {
-    setRole(role);
+    localStorage.setItem("role", role); // ✅ FIX
 
     if (role === "student") {
       navigate("/student/login");

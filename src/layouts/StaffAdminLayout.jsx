@@ -1,5 +1,4 @@
-import { useRole } from "../context/roleContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   LogOut,
   Menu,
@@ -13,12 +12,13 @@ import {
 import { useState } from "react";
 
 export default function StaffAdminLayout({ children }) {
-  const { role, logout } = useRole();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
+  const role = localStorage.getItem("role");
+
   const handleLogout = () => {
-    logout();
+    localStorage.clear();
     navigate("/");
   };
 
@@ -40,9 +40,8 @@ export default function StaffAdminLayout({ children }) {
   return (
     <div className="min-h-screen flex">
       <aside
-        className={`border-r transition-all duration-300 ${
-          sidebarOpen ? "w-64" : "w-20"
-        }`}
+        className={`border-r transition-all duration-300 ${sidebarOpen ? "w-64" : "w-20"
+          }`}
       >
         <div className="p-6 flex justify-between items-center">
           {sidebarOpen && <h1 className="font-bold">Grievance Portal</h1>}
@@ -53,14 +52,14 @@ export default function StaffAdminLayout({ children }) {
 
         <nav className="px-4 space-y-2">
           {navItems.map(({ path, label, icon: Icon }) => (
-            <a
+            <Link
               key={path}
-              href={path}
+              to={path}
               className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-100"
             >
               <Icon />
               {sidebarOpen && label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -72,7 +71,6 @@ export default function StaffAdminLayout({ children }) {
         </div>
       </aside>
 
-      {/* Content */}
       <main className="flex-1 p-8">{children}</main>
     </div>
   );

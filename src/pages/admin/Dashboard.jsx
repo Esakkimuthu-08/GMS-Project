@@ -53,7 +53,6 @@ export default function AdminDashboard() {
           Admin Dashboard
         </h1>
 
-        {/* Stats Grid */}
         <div className="grid md:grid-cols-5 gap-4 mb-8">
           {stats.map((stat) => {
             const Icon = stat.icon;
@@ -80,7 +79,6 @@ export default function AdminDashboard() {
           })}
         </div>
 
-        {/* Charts */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="md:col-span-2 bg-white rounded-lg shadow-md border border-border p-8">
             <h2 className="text-lg font-bold text-foreground mb-6">
@@ -107,7 +105,6 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Quick Actions */}
         <div className="grid md:grid-cols-4 gap-4">
           <a
             href="/admin/grievances"

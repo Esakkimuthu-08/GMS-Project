@@ -34,27 +34,27 @@ export const SideNav = () => {
                 </div>
 
                 <nav className="p-4 space-y-2">
-                    <NavLink to="/dashboard" className={navLinkClass}>
+                    <NavLink to="/admin/dashboard" className={navLinkClass}>
                         <MdSpaceDashboard size={22} />
                         Dashboard
                     </NavLink>
 
-                    <NavLink to="/tickets" className={navLinkClass}>
+                    <NavLink to="tickets" className={navLinkClass}>
                         <FaTicket size={22} />
                         Tickets
                     </NavLink>
 
-                    <NavLink to="/reports" className={navLinkClass}>
+                    <NavLink to="reports" className={navLinkClass}>
                         <GoGraph size={22} />
                         Reports & Analysis
                     </NavLink>
 
-                    <NavLink to="/users" className={navLinkClass}>
+                    <NavLink to="users" className={navLinkClass}>
                         <FaUserFriends size={22} />
                         User Management
                     </NavLink>
 
-                    <NavLink to="/settings" className={navLinkClass}>
+                    <NavLink to="settings" className={navLinkClass}>
                         <IoIosSettings size={22} />
                         Settings
                     </NavLink>
