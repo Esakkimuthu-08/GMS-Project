@@ -5,8 +5,7 @@ export default function Index() {
   const navigate = useNavigate();
 
   const handleRoleSelect = (role) => {
-    localStorage.setItem("role", role); // ✅ FIX
-
+    localStorage.setItem("role", role); 
     if (role === "student") {
       navigate("/student/login");
     } else if (role === "staff") {
@@ -18,7 +17,6 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-primary/10 flex flex-col">
-      {/* Header */}
       <header className="bg-white border-b shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-8 text-center">
           <h1 className="text-4xl font-bold mb-2">
@@ -30,7 +28,6 @@ export default function Index() {
         </div>
       </header>
 
-      {/* Main */}
       <main className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="max-w-4xl w-full">
           <div className="text-center mb-12">
@@ -43,7 +40,6 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {/* Student */}
             <button
               onClick={() => handleRoleSelect("student")}
               className="group bg-white rounded-xl shadow-md hover:shadow-xl border transition-all hover:-translate-y-2"
@@ -56,13 +52,12 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground mb-6">
                   Raise and track grievances
                 </p>
-                <span className="inline-block px-6 py-2 bg-primary text-white rounded-lg">
+                <span className="inline-block px-6 py-2 bg-[#3A5B22] text-white rounded-lg">
                   Enter as Student
                 </span>
               </div>
             </button>
 
-            {/* Staff */}
             <button
               onClick={() => handleRoleSelect("staff")}
               className="group bg-white rounded-xl shadow-md hover:shadow-xl border transition-all hover:-translate-y-2"
@@ -75,13 +70,12 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground mb-6">
                   Handle and resolve grievances
                 </p>
-                <span className="inline-block px-6 py-2 bg-primary text-white rounded-lg">
+                <span className="inline-block px-6 py-2 bg-[#3A5B22] text-white rounded-lg">
                   Enter as Staff
                 </span>
               </div>
             </button>
 
-            {/* Admin */}
             <button
               onClick={() => handleRoleSelect("admin")}
               className="group bg-white rounded-xl shadow-md hover:shadow-xl border transition-all hover:-translate-y-2"
@@ -94,7 +88,7 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground mb-6">
                   System administration & analytics
                 </p>
-                <span className="inline-block px-6 py-2 bg-primary text-white rounded-lg">
+                <span className="inline-block px-6 py-2 bg-[#3A5B22] text-white rounded-lg">
                   Enter as Admin
                 </span>
               </div>
@@ -103,7 +97,6 @@ export default function Index() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-white border-t">
         <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
           © 2024 Grievance Management System. All rights reserved.

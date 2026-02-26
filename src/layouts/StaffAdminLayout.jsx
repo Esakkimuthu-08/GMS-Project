@@ -10,15 +10,21 @@ import {
   ClipboardList,
 } from "lucide-react";
 import { useState } from "react";
+import { useAuthStore } from "@/pages/auth/store";
+
 
 export default function StaffAdminLayout({ children }) {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  const role = localStorage.getItem("role");
+  // ✅ Get auth data from Zustand
+  const { user, logout } = useAuthStore();
+
+  // ✅ Normalize role (VERY IMPORTANT)
+  const role = user?.Role?.toLowerCase();
 
   const handleLogout = () => {
-    localStorage.clear();
+    logout();          // clears Zustand + token
     navigate("/");
   };
 
@@ -35,13 +41,15 @@ export default function StaffAdminLayout({ children }) {
     { label: "Settings", path: "/admin/settings", icon: Settings },
   ];
 
+  // ✅ Role-based sidebar
   const navItems = role === "admin" ? adminNavItems : staffNavItems;
 
   return (
     <div className="min-h-screen flex">
       <aside
-        className={`border-r transition-all duration-300 ${sidebarOpen ? "w-64" : "w-20"
-          }`}
+        className={`border-r transition-all duration-300 ${
+          sidebarOpen ? "w-64" : "w-20"
+        }`}
       >
         <div className="p-6 flex justify-between items-center">
           {sidebarOpen && <h1 className="font-bold">Grievance Portal</h1>}

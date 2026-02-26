@@ -9,6 +9,7 @@ export function StudentLayout({ children }) {
   const handleLogout = () => {
     localStorage.clear(); 
     navigate("/");
+    window.location.reload()
   };
 
   const navItems = [

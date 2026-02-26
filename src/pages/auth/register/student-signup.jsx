@@ -34,7 +34,7 @@ export const StudentSignup = () => {
 
         try {
             const res = await axios.post(
-                "https://localhost:44312/api/Auth/Student-SignUp",
+                "https://localhost:44312/api/Auth/StudentSignUp",
                 payload
             );
 

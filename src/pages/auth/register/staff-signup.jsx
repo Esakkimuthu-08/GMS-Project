@@ -5,7 +5,6 @@ import img from "../../../assets/welcome.png";
 
 
 export const StaffsignUp = () => {
-
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import StaffAdminLayout from "../../layouts/StaffAdminLayout";
 import {
   FileText,
@@ -106,18 +107,18 @@ export default function AdminDashboard() {
         </div>
 
         <div className="grid md:grid-cols-4 gap-4">
-          <a
-            href="/admin/grievances"
+          <Link
+            to="/admin/grievances"
             className="bg-white rounded-lg shadow-md border border-border p-6 hover:shadow-lg hover:border-primary transition-all group"
           >
             <p className="font-semibold text-foreground mb-2 group-hover:text-primary">
               Manage Grievances
             </p>
             <p className="text-sm text-muted-foreground">View all grievances</p>
-          </a>
+          </Link>
 
-          <a
-            href="/admin/users"
+          <Link
+            to="/admin/users"
             className="bg-white rounded-lg shadow-md border border-border p-6 hover:shadow-lg hover:border-primary transition-all group"
           >
             <p className="font-semibold text-foreground mb-2 group-hover:text-primary">
@@ -126,27 +127,27 @@ export default function AdminDashboard() {
             <p className="text-sm text-muted-foreground">
               Manage staff & admins
             </p>
-          </a>
+          </Link>
 
-          <a
-            href="/admin/reports"
+          <Link
+            to="/admin/reports"
             className="bg-white rounded-lg shadow-md border border-border p-6 hover:shadow-lg hover:border-primary transition-all group"
           >
             <p className="font-semibold text-foreground mb-2 group-hover:text-primary">
               Reports
             </p>
             <p className="text-sm text-muted-foreground">View analytics</p>
-          </a>
+          </Link>
 
-          <a
-            href="/admin/settings"
+          <Link
+            to="/admin/settings"
             className="bg-white rounded-lg shadow-md border border-border p-6 hover:shadow-lg hover:border-primary transition-all group"
           >
             <p className="font-semibold text-foreground mb-2 group-hover:text-primary">
               Settings
             </p>
             <p className="text-sm text-muted-foreground">Configure system</p>
-          </a>
+          </Link>
         </div>
       </div>
     </StaffAdminLayout>

@@ -7,7 +7,7 @@ import StarCards from "./star-card";
 export const Dashboard = () => {
     const [userDetails, setUserDetails] = useState({})
     useEffect(() => {
-        const userDetail = sessionStorage.getItem('user')
+        const userDetail = sessionStorage('user');
         setUserDetails(JSON.parse(userDetail));
     }, [])
 
