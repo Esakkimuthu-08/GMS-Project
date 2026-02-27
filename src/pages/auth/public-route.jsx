@@ -5,7 +5,7 @@ const PublicRoute = ({ children }) => {
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
     const role = localStorage.getItem("role");
 
-    console.log(isAuthenticated && role);
+    // console.log(isAuthenticated && role);
     
 
     if (isAuthenticated && role) {

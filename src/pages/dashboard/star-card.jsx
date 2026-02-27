@@ -11,6 +11,7 @@ import { SlCalender } from "react-icons/sl";
 function StarCards() {
     return (
         <div className="grid grid-cols-4 gap-5 w-[95%] mx-auto my-0">
+
             <div className=" flex justify-between  hover:shadow-xl  transition-transform duration-500 ease-out hover:-translate-y-1 w-[95%] shadow-lg items-center px-3  border-l-4 rounded-l-2xl border-l-blue-700 rounded-lg h-[95px] ">
                 <div className=" font-medium text-gray-500 text-[14px]">
                     <p>Total Ticket</p>
@@ -20,6 +21,7 @@ function StarCards() {
                     <LuTicket size={25} />
                 </div>
             </div>
+            
             <div className=" flex justify-between  hover:shadow-xl  transition-transform duration-500 ease-out hover:-translate-y-1 w-[95%] shadow-lg items-center  px-3  border-l-4 rounded-l-2xl border-l-orange-600 rounded-lg h-[95px] ">
                 <div className=" font-medium text-gray-500 text-[14px]">
                     <p>In-Process</p>
